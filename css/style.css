@@ -1,0 +1,141 @@
+/* --===================== BOXICONS ================-- */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+/* --===================== VARIABLES CSS ================-- */
+
+:root {
+  --header-height: 3.5rem;
+
+  /* =============== Colors ============== */
+
+  --fierst-color: hsl(38, 69%, 59%);
+  --text-color: hsl(38, 8%, 8%);
+
+  /* =============== Font and typografy ============== */
+  /* 0.5rem = 8px  /  1rem=16px ... */
+  --body-font: "Space Grotesk", sans-serif;
+  --biggest-font-sixe: 2.375rem;
+  --normal-font-sixe: 0.938rem;
+  --smaller-font-size: 0.75;
+}
+
+/* =============== Responsive typography ============== */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-sixe: 5rem;
+    --normal-font-sixe: 1rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/* =============== BASE ============== */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-sixe);
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =============== HEADER ============== */
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__tooggle {
+  color: var(--text-color);
+  display: inline-flex;
+}
+
+.nav__logo {
+  font-weight: 700;
+}
+
+.nav__tooggle {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--fierst-color);
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 5rem 0 4rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 2px 4px hsla(38, 4%, 15%, 0.15);
+    transition: 0.4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.nav__link {
+  color: var(--text-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*=============== SHOW MENU ===============*/
+.show-menu {
+  top: 0;
+}
+
+/* =============== REUSABLE CSS CLASSES ============== */
+
+.container {
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  color: var(--text-color);
+}
+
+.main {
+  overflow: hidden; /* For the animation ScrollReveal */
+}
