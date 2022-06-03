@@ -148,7 +148,6 @@ img {
   background-color: var(--fierst-color);
   padding: 9rem 0 2rem;
   height: 100vh;
-  display: grid;
 }
 
 .home__container {
@@ -230,7 +229,7 @@ img {
   }
 }
 
-/* =============== BREAKPOINTS ============== *
+/* =============== BREAKPOINTS ============== */
 
 /* For small devices */
 @media screen and (max-width: 320px) {
@@ -257,6 +256,7 @@ img {
 }
 
 /* For large devices */
+
 @media screen and (min-width: 1024px) {
   .home__container {
     grid-template-columns: repeat(2, 1fr);
@@ -286,6 +286,7 @@ img {
 }
 
 /* For 2K resolution (2048 x 1152, 2048 x 1536 */
+
 @media screen and (min-width: 2048px) {
   body {
     zoom: 1.7;
@@ -293,7 +294,19 @@ img {
 
   .home {
     height: initial;
+    row-gap: 4rem;
   }
 }
 
 /* For 4K resolution (3840 x 2160, 4096 x 2160 */
+
+@media screen and (min-width: 3840px) {
+  body {
+    zoom: 3.1;
+  }
+
+  .home {
+    height: initial;
+    row-gap: 4rem;
+  }
+}
