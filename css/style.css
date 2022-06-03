@@ -28,6 +28,19 @@
   }
 }
 
+.container {
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  /* padding-right: 15px;
+    padding-left: 15px; */
+  color: var(--text-color);
+}
+
+.main {
+  overflow: hidden; /* For the animation ScrollReveal */
+}
+
 /* =============== BASE ============== */
 
 * {
@@ -94,7 +107,7 @@ img {
     position: fixed;
     background-color: var(--fierst-color);
     left: 0;
-    top: 0;
+    top: -100%;
     width: 100%;
     padding: 5rem 0 4rem;
     border-radius: 0 0 1.5rem 1.5rem;
@@ -119,6 +132,7 @@ img {
   top: 1rem;
   right: 1.5rem;
   font-size: 1.5rem;
+  color: var(--text-color);
   cursor: pointer;
 }
 
@@ -127,15 +141,159 @@ img {
   top: 0;
 }
 
-/* =============== REUSABLE CSS CLASSES ============== */
+/*=============== HOME ===============*/
+.home {
+  display: grid;
 
-.container {
-  max-width: 1024px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  color: var(--text-color);
+  background-color: var(--fierst-color);
+  padding: 9rem 0 2rem;
+  height: 100vh;
+  display: grid;
 }
 
-.main {
-  overflow: hidden; /* For the animation ScrollReveal */
+.home__container {
+  display: grid;
+  align-content: center;
+  row-gap: 2.5rem;
 }
+
+.home__data {
+  text-align: center;
+}
+
+.home__subtitle {
+  display: block;
+}
+
+.home__title {
+  font-size: var(--biggest-font-sixe);
+  margin: 0.75rem 0;
+}
+
+.home__buttom {
+  margin-top: 2rem;
+  display: inline-block;
+  background-color: var(--text-color);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 3rem;
+  transition: 0.4s;
+}
+
+.home__buttom:hover {
+  box-shadow: 0 4px 12px hsla(38, 69%, 8%, 0.2);
+}
+
+.home__img img {
+  width: 230px;
+  animation: floaty 1.8s infinite alternate;
+}
+
+.home__img {
+  justify-self: center;
+}
+
+.home__shadow {
+  width: 180px;
+  height: 34px;
+  background-color: hsla(38, 21%, 19%, 0.16);
+  margin: 0 auto;
+  border-radius: 50%;
+  filter: blur(7px);
+  animation: shadow 1.8s infinite alternate;
+}
+
+.home__footer {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5rem;
+  font-size: var(--smaller-font-size);
+  align-self: flex-end;
+}
+
+/* Animate ghost */
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(25px);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.8, 0.8);
+  }
+}
+
+/* =============== BREAKPOINTS ============== *
+
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .home {
+    padding-top: 7rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 767px) {
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .nav__tooggle,
+  .nav__close {
+    display: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 3.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .home__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 2rem;
+  }
+
+  .home__data {
+    text-align: initial;
+  }
+
+  .home__img img {
+    width: 400px;
+  }
+
+  .home__shadow {
+    width: 250px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* For 2K resolution (2048 x 1152, 2048 x 1536 */
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.7;
+  }
+
+  .home {
+    height: initial;
+  }
+}
+
+/* For 4K resolution (3840 x 2160, 4096 x 2160 */
